@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FizzBuzz/FizzBuzz.iml" filepath="$PROJECT_DIR$/FizzBuzz/FizzBuzz.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sprint_1_Activities.iml" filepath="$PROJECT_DIR$/Sprint_1_Activities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UniqueSum/UniqueSum.iml" filepath="$PROJECT_DIR$/UniqueSum/UniqueSum.iml" />
     </modules>
   </component>
 </project>
