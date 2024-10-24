@@ -20,7 +20,7 @@ public class FizzBuzz {
             }
         }
 
-        System.out.println(""); // For aesthetic reasons
+        System.out.println(); // For aesthetic reasons
 
         // Once value has been found, print out all of the values
         for (int x = 1; x < maxValue + 1; x++){
