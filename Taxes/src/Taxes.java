@@ -6,7 +6,7 @@ public class Taxes {
 
         // Greet the user
         System.out.println("TAX CALCULATOR");
-        System.out.println("\nPlease input your salary: (Format: 0000.00)");
+        System.out.println("\nPlease input your salary: (Format: XXXX.XX)");
 
         // Get the user's input
         Scanner scanner = new Scanner(System.in);
@@ -23,8 +23,10 @@ public class Taxes {
         System.out.println(); // For aesthetic reasons
 
         // Calculate the tax % and the amount being taxed
+
         int taxPercent;
         float taxAmount = 0;
+        // Percent
         if (salary < 15000) {
             taxPercent = 0;
         } else if (salary < 20000) {
@@ -36,13 +38,14 @@ public class Taxes {
         } else {
             taxPercent = 25;
         }
+        // Amount being taxed
         if (taxPercent != 0) {
             taxAmount = salary / taxPercent;
         }
 
         // Print out the salary, tax % and tax amount
-        System.out.println("SALARY BEFORE TAX: £" + String.format("%.2f", salary));
-        System.out.println("Tax Amount: £" + String.format("%.2f", taxAmount) +" (" + taxPercent + "% Tax)");
+        System.out.println("SALARY BEFORE TAX:\t£" + String.format("%.2f", salary));
+        System.out.println("TAX AMOUNT:\t\t\t£" + String.format("%.2f", taxAmount) +" (" + taxPercent + "% Tax)");
 
         // End
     }
@@ -53,15 +56,17 @@ public class Taxes {
         while (true) {
             // Get the user's input
             String input = scanner.nextLine();
-            // If it is an integer, the try loop will succeed
+            // Check whether it is a valid float, else repeat user input
             if (input.contains(".")) {
+                // Input contains at least one decimal place, so ensure that it is valid
                 if (input.split("\\.").length > 2) {
                     // Error - too many decimal points
-                    System.out.println("INVALID VALUE. TRY AGAIN");
+                    System.out.println("INVALID VALUE. 1 DECIMAL POINT MAX. TRY AGAIN");
                 } else if (input.split("\\.")[1].length() > 2) {
                     // Error - too many decimal places
-                    System.out.println("INVALID VALUE. TRY AGAIN");
+                    System.out.println("INVALID VALUE. 2 DECIMAL PLACES MAX. TRY AGAIN");
                 } else {
+                    // If the input is a valid float, then it will be returned
                     try {
                         return Float.parseFloat(input);
                     } catch (NumberFormatException e) {
@@ -69,6 +74,7 @@ public class Taxes {
                     }
                 }
             } else {
+                // If the input is a valid float, then it will be returned
                 try {
                     return Float.parseFloat(input);
                 } catch (NumberFormatException e) {
