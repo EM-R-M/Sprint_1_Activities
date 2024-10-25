@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Product {
 
-    private static ArrayList<Product> inventory = new ArrayList<>();
+    private static final ArrayList<Product> inventory = new ArrayList<>();
     private static int nextProductID = 0;
     private final int productID;
     private String productName;
@@ -36,6 +36,7 @@ public class Product {
     public void setQuantityInStock(int quantity) { this.quantityInStock = quantity; }
     public float getQuantityInStock(){ return quantityInStock; }
 
+    // GOING TO CHANGE BELOW LATER WHEN THE PROGRAM GETS MORE COMPLEX
     public ArrayList<Product> getInventory() {
         return inventory;
     }
