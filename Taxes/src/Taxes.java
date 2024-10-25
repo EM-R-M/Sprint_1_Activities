@@ -1,3 +1,7 @@
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Taxes {
@@ -22,30 +26,36 @@ public class Taxes {
 
         System.out.println(); // For aesthetic reasons
 
-        // Calculate the tax % and the amount being taxed
-
-        int taxPercent;
+        // Calculate the amount being taxed
         float taxAmount = 0;
-        // Percent
+        List<Float> taxBracketAmounts = new ArrayList<Float>();
+        List<Float> taxBracketPercent = new ArrayList<Float>();
+        Collections.addAll(taxBracketPercent, (float) 0.1, (float) 0.15, (float) 0.20, (float) 0.25);
         if (salary < 15000) {
-            taxPercent = 0;
+            taxAmount = 0;
         } else if (salary < 20000) {
-            taxPercent = 10;
+            taxBracketAmounts.add(salary - 14999);
         } else if (salary < 30000) {
-            taxPercent = 15;
+            taxBracketAmounts.add((float) 5000);
+            taxBracketAmounts.add(salary - 19999);
         } else if (salary < 45000) {
-            taxPercent = 20;
+            taxBracketAmounts.add((float) 5000);
+            taxBracketAmounts.add((float) 10000);
+            taxBracketAmounts.add(salary - 29999);
         } else {
-            taxPercent = 25;
-        }
-        // Amount being taxed
-        if (taxPercent != 0) {
-            taxAmount = salary / taxPercent;
+            taxBracketAmounts.add((float) 5000);
+            taxBracketAmounts.add((float) 10000);
+            taxBracketAmounts.add((float) 15000);
+            taxBracketAmounts.add(salary - 44999);
         }
 
-        // Print out the salary, tax % and tax amount
+        for (int x = 0; x < taxBracketAmounts.size(); x++){
+            taxAmount += taxBracketAmounts.get(x) * taxBracketPercent.get(x);
+        }
+
+        // Print out the salary and tax amount
         System.out.println("SALARY BEFORE TAX:\t£" + String.format("%.2f", salary));
-        System.out.println("TAX AMOUNT:\t\t\t£" + String.format("%.2f", taxAmount) +" (" + taxPercent + "% Tax)");
+        System.out.println("TAX AMOUNT:\t\t\t£" + String.format("%.2f", taxAmount));
 
         // End
     }
