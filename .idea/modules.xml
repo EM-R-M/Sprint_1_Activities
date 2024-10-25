@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FizzBuzz/FizzBuzz.iml" filepath="$PROJECT_DIR$/FizzBuzz/FizzBuzz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InventoryManagement/InventoryManagement.iml" filepath="$PROJECT_DIR$/InventoryManagement/InventoryManagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/People/People.iml" filepath="$PROJECT_DIR$/People/People.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sprint_1_Activities.iml" filepath="$PROJECT_DIR$/Sprint_1_Activities.iml" />
       <module fileurl="file://$PROJECT_DIR$/Taxes/Taxes.iml" filepath="$PROJECT_DIR$/Taxes/Taxes.iml" />
